@@ -359,9 +359,9 @@ for loop in range(28,total_iterations):
     
     
     ######################### FAZER 1A AVALIAÇÂO #########################
-    predictions_ini1 = cross_val_predict(DecisionTreeClassifier(), X, y, cv=LeaveOneOut(),n_jobs=-1)
-    predictions_ini2 = cross_val_predict(DecisionTreeClassifier(), X, y, cv=LeaveOneOut(),n_jobs=-1)
-    predictions_ini3 = cross_val_predict(DecisionTreeClassifier(), X, y, cv=LeaveOneOut(),n_jobs=-1)
+    predictions_ini1 = cross_val_predict(DecisionTreeClassifier(max_depth=20, min_samples_split=3), X, y, cv=LeaveOneOut(),n_jobs=-1)
+    predictions_ini2 = cross_val_predict(DecisionTreeClassifier(max_depth=20, min_samples_split=3), X, y, cv=LeaveOneOut(),n_jobs=-1)
+    predictions_ini3 = cross_val_predict(DecisionTreeClassifier(max_depth=20, min_samples_split=3), X, y, cv=LeaveOneOut(),n_jobs=-1)
     
     best_accuracy1 = round(metrics.accuracy_score(y, predictions_ini1),decimal_cases2)
     best_accuracy2 = round(metrics.accuracy_score(y, predictions_ini2),decimal_cases2)
@@ -387,9 +387,9 @@ for loop in range(28,total_iterations):
         if i >= mumber_to_perturbe:
             if Y_temp.empty == False:           
                             
-                predictions_1 = cross_val_predict(DecisionTreeClassifier(), X, y, cv=LeaveOneOut(),n_jobs=-1)
-                predictions_2 = cross_val_predict(DecisionTreeClassifier(), X, y, cv=LeaveOneOut(),n_jobs=-1)
-                predictions_3 = cross_val_predict(DecisionTreeClassifier(), X, y, cv=LeaveOneOut(),n_jobs=-1)
+                predictions_1 = cross_val_predict(DecisionTreeClassifier(max_depth=20, min_samples_split=3), X, y, cv=LeaveOneOut(),n_jobs=-1)
+                predictions_2 = cross_val_predict(DecisionTreeClassifier(max_depth=20, min_samples_split=3), X, y, cv=LeaveOneOut(),n_jobs=-1)
+                predictions_3 = cross_val_predict(DecisionTreeClassifier(max_depth=20, min_samples_split=3), X, y, cv=LeaveOneOut(),n_jobs=-1)
                 
                 accuracy_1 = round(metrics.accuracy_score(y, predictions_1),decimal_cases2) 
                 accuracy_2 = round(metrics.accuracy_score(y, predictions_2),decimal_cases2)
@@ -398,9 +398,9 @@ for loop in range(28,total_iterations):
                 accuracy_x = round((accuracy_1+accuracy_2+accuracy_3)/3,decimal_cases2)
                 
                 
-                predictions_y_1 = cross_val_predict(DecisionTreeClassifier(), Y_temp, y, cv=LeaveOneOut(),n_jobs=-1)
-                predictions_y_2 = cross_val_predict(DecisionTreeClassifier(), Y_temp, y, cv=LeaveOneOut(),n_jobs=-1)
-                predictions_y_3 = cross_val_predict(DecisionTreeClassifier(), Y_temp, y, cv=LeaveOneOut(),n_jobs=-1)
+                predictions_y_1 = cross_val_predict(DecisionTreeClassifier(max_depth=20, min_samples_split=3), Y_temp, y, cv=LeaveOneOut(),n_jobs=-1)
+                predictions_y_2 = cross_val_predict(DecisionTreeClassifier(max_depth=20, min_samples_split=3), Y_temp, y, cv=LeaveOneOut(),n_jobs=-1)
+                predictions_y_3 = cross_val_predict(DecisionTreeClassifier(max_depth=20, min_samples_split=3), Y_temp, y, cv=LeaveOneOut(),n_jobs=-1)
                 
                 accuracy_y_1 = round(metrics.accuracy_score(y, predictions_y_1),decimal_cases2) 
                 accuracy_y_2 = round(metrics.accuracy_score(y, predictions_y_2),decimal_cases2)
@@ -474,9 +474,9 @@ for loop in range(28,total_iterations):
             arr_scaled = scaler.fit_transform(X) 
             X = pd.DataFrame(arr_scaled, columns=X.columns,index=X.index)
             
-            predictions1 = cross_val_predict(DecisionTreeClassifier(), X, y, cv=LeaveOneOut(),n_jobs=-1)
-            ##predictions2 = cross_val_predict(DecisionTreeClassifier(), X, y, cv=LeaveOneOut(),n_jobs=-1)
-            ##predictions3 = cross_val_predict(DecisionTreeClassifier(), X, y, cv=LeaveOneOut(),n_jobs=-1)
+            predictions1 = cross_val_predict(DecisionTreeClassifier(max_depth=20, min_samples_split=3), X, y, cv=LeaveOneOut(),n_jobs=-1)
+            ##predictions2 = cross_val_predict(DecisionTreeClassifier(max_depth=20, min_samples_split=3), X, y, cv=LeaveOneOut(),n_jobs=-1)
+            ##predictions3 = cross_val_predict(DecisionTreeClassifier(max_depth=20, min_samples_split=3), X, y, cv=LeaveOneOut(),n_jobs=-1)
             
             accuracy1 = round(metrics.accuracy_score(y, predictions1),decimal_cases2) 
             ##accuracy2 = round(metrics.accuracy_score(y, predictions2),decimal_cases2)
