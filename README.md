@@ -1,4 +1,4 @@
-# tils
+# TILS
 
 Feature engineering is the term used to define a set of techniques used in the creation and manipulation of features, aiming at the performance of machine learning algorithms. It is one of the most important steps in building a good model. However, feature engineering is not just about selecting the best features for a model, it is a process that encompasses the transformation of features in order to extract the greatest potential possible as well as the creation of new features.
 In this work, a study on feature engineering methods is carried out and a new feature engineering method (TILS) based on local search algorithms such as climb hills and ILS – Iterated Local Search is developed. The developed method is compared with some existing feature engineering methods and tested with a real biological dataset. The developed method aims to select and create new features for any problem in order to take the best possible advantage of the dataset.
